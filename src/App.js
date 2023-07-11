@@ -1,30 +1,24 @@
 import './App.css';
-import React, {useEffect, useState} from "react";
-import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom"
+import React from "react";
+import {BrowserRouter,  Route, Routes} from "react-router-dom"
+import "./static/css/indexStyle.scss";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Pages from "./routes/pages";
+import Index from './container/pages/index';
 
 function App() {
-
-    const [path, setPath] = useState(window.location.pathname);
-
-    useEffect(() => {
-        let unmounted = false;
-        if (!unmounted) {
-            setPath(window.location.pathname);
-        }
-        return () => (unmounted = true);
-    }, [setPath]);
-
 
     return (
         <div className="app">
             <BrowserRouter>
                 <Header />
+                <div className="index-container">
                     <Routes>
+                        <Route path="/" element={<Index />} />
                         <Route path="/*" element={<Pages />} />
                     </Routes>
+                </div>
                 <Footer />
             </BrowserRouter>
         </div>

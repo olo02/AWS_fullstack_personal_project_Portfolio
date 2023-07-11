@@ -1,13 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App.js';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from 'react-redux';
+import {combineReducers, createStore} from 'redux';
+
+function pageReducer(state = {state :'home', num : 0}, action){
+    if(action.type === 'home') {
+        state = { state : 'home', num : 0 };
+    } else if (action.type === 'intro') {
+        state = {state : 'intro', num : 1}
+    } else if (action.type === 'skills') {
+        state = {state : 'skills', num : 2}
+    } else if (action.type === 'project') {
+        state = {state : 'project', num : 3}
+    } else if (action.type === 'contact') {
+        state = {state : 'contact', num : 4}
+    }
+    return state
+}
+
+function projectReducer(state = 'team' , action) {
+    if(action.nav === 'team') {
+        state = 'team'
+    } else if (action.nav === 'personal') {
+        state = 'personal'
+    }
+    return state
+}
+
+const reducer = combineReducers({
+    page : pageReducer,
+    project : projectReducer
+})
+
+let store = createStore(reducer)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <Provider store={store}>
+          <App />
+      </Provider>
   </React.StrictMode>
 );
 
