@@ -64,4 +64,4 @@ const DetailProject = () => {
     );
 };
 
-export default DetailProject;
+export default React.memo(DetailProject);

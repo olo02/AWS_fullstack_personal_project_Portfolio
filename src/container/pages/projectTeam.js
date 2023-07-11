@@ -57,4 +57,4 @@ const ProjectTeam = () => {
     );
 };
 
-export default ProjectTeam;
+export default React.memo(ProjectTeam);

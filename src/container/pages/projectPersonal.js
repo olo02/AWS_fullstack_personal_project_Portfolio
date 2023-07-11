@@ -58,4 +58,4 @@ const ProjectPersonal = () => {
     );
 };
 
-export default ProjectPersonal;
+export default React.memo(ProjectPersonal);

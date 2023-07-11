@@ -20,8 +20,16 @@ const PagesRoute = React.memo(() => {
     return (
         <Suspense
             fallback={
-                <div> 로딩중...
-                </div>
+                <div style={{
+                    fontSize: 50,
+                    display: "flex",
+                    flexDirection: "column",
+                    flexWrap:"wrap",
+                    width:"100%",
+                    height:"100vh",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}> 로딩중... </div>
             }
         >
             <Routes>

@@ -17,45 +17,45 @@ const Skills = () => {
                 <div className="skill-container">
                     <div className="langauge">
                         <h3>Language</h3>
-                        <div className="java">Java</div>
-                        <div className="javascript">JavaScript</div>
-                        <div className="html-css">HTML/CSS</div>
-                    </div>
-                    <div className="etc">
-                        <h3>etc</h3>
-                        <div className="git">GitHub</div>
-                        <div className="svn">SVN</div>
-                        <div className="aws">AWS EC2</div>
-                        <div className="nginx">NGINX</div>
-                        <div className="tomcat">Tomcat</div>
-                    </div>
-                    <div className="framework">
-                        <h3>Framework & Library</h3>
-                        <div className="spring">Spring</div>
-                        <div className="springboot">Spring<br />Boot</div>
-                        <div className="springsecurity">Spring Security</div>
-                        <div className="springjpa">Spring<br />JPA</div>
-                        <div className="mybatis">Mybatis</div>
-                        <div className="jsp">JSP</div>
-                        <div className="servlet">Servlet</div>
-                        <div className="react">React</div>
+                        <div className="java"><img src={require('../../static/img/java.png')} /></div>
+                        <div className="javascript"><img src={require('../../static/img/javascript.png')} /></div>
+                        <div className="html-css"><img src={require('../../static/img/html.png')} /></div>
+                        <div className="html-css"><img src={require('../../static/img/css.png')} /></div>
                     </div>
                     <div className="database">
                         <h3>Database</h3>
-                        <div className="maria">MariaDB</div>
-                        <div className="mysql">MySQL</div>
-                        <div className="oracle">Oracle</div>
+                        <div className="maria"><img src={require('../../static/img/maria.png')} /></div>
+                        <div className="mysql"><img src={require('../../static/img/mysql.png')} /></div>
+                        <div className="oracle"><img src={require('../../static/img/oracle.png')} /></div>
+                    </div>
+                    <div className="etc">
+                        <h3>etc</h3>
+                        <div className="git"><img src={require('../../static/img/github.png')} /></div>
+                        <div className="svn"><img src={require('../../static/img/svn.png')} /></div>
+                        <div className="aws"><img src={require('../../static/img/ec2.png')} /></div>
+                        <div className="nginx"><img src={require('../../static/img/nginx.png')} /></div>
+                        <div className="tomcat"><img src={require('../../static/img/tomcat.png')} /></div>
+                    </div>
+                    <div className="framework">
+                        <h3>Framework & Library</h3>
+                        <div className="spring"><img src={require('../../static/img/spring.png')} /></div>
+                        <div className="springboot"><img src={require('../../static/img/springboot.png')} /></div>
+                        <div className="springsecurity"><img src={require('../../static/img/springsecurity.png')} /></div>
+                        <div className="springjpa"><img src={require('../../static/img/springjpa.png')} /></div>
+                        <div className="mybatis"><img src={require('../../static/img/mybatis.png')} /></div>
+                        <div className="jsp"><img src={require('../../static/img/jsp.png')} /></div>
+                        <div className="servlet"><img src={require('../../static/img/servlet.png')} /></div>
+                        <div className="react"><img src={require('../../static/img/react.png')} /></div>
                     </div>
                 </div>
             </div>
             <div className="skills-box-1"></div>
             <div className="skills-box-2"></div>
             <div className="nextPage">
-                scroll
                 <ExpandMoreIcon />
             </div>
         </div>
     );
 };
 
-export default Skills;
+export default React.memo(Skills);
