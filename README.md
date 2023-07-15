@@ -43,9 +43,7 @@ $ git clone https://github.com/olo02/AWS_fullstack_personal_project_Portfolio.gi
 
 ---
 
-## 설계
-
-### Stacks
+## Stacks
 
 - #### Environment
 
