@@ -1,7 +1,7 @@
 # Portfolio Site - React
 
 <div align="center">
-<img width="500" alt="image" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/cc68fe91-24fe-4bcb-abb5-e2077508119e">
+<img width="500" alt="image" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/81eccedd-201f-4723-8202-8db92114f349">
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Folo02%2FAWS_fullstack_personal_project_Portfolio&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
@@ -77,11 +77,11 @@ $ git clone https://github.com/olo02/AWS_fullstack_personal_project_Portfolio.gi
 
 |                                                                   index 페이지                                                                   |                                                                   소개 페이지                                                                    |
 | :----------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------: |
-| <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/7cebb40b-0480-4803-a505-ae38b3fef671"/> | <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/f815e8ee-83af-4473-9a85-f9f73311f78e"/> |
+| <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/81eccedd-201f-4723-8202-8db92114f349" /> | <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/fc4c1a1b-4a1b-4c00-ae1e-1fdb507b341a" /> |
 |                                                                 기술 스택 페이지                                                                 |                                                                 프로젝트 페이지                                                                  |
-| <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/cc5d3613-5822-4ae4-9eaf-93abecbf1886"/> | <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/5be7778c-ae31-449f-ae47-8c822dfef97e"/> |
+| <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/e7b62581-6a31-42f8-b5d8-bff224974615" /> | <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/36af7486-c4ef-4e84-b29c-cbf1cce98004" /> |
 |                                                               프로젝트 상세 페이지                                                               |                                                                  contact 페이지                                                                  |
-|                                                                                                                                                  | <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/32c98d2f-a6f1-4d43-bc80-dfa5a44df8cc"/> |
+|  <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/48e9293c-52d3-4091-9ab3-e485ebeb31c7" />   | <img width="500" src="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio/assets/121186383/49fd9876-445f-4bda-8a5e-5ccc5f74b3e9" /> |
 
 </div>
 
