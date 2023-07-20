@@ -304,13 +304,14 @@
           margin-top: 0;
         }
         .skill-wrapper {
-          border: 3px #333333 solid;
+          //border: 3px #333333 solid;
           border-radius: 50px;
           width: 70%;
           position: relative;
           overflow: auto;
+          //background: #cbdbe72e;
           .skill-container{
-            padding: 30px 50px;
+            padding: 15px 50px 30px;
             height: 65vh;
             display: flex;
             flex-direction: column;
@@ -323,7 +324,10 @@
               flex-direction: row;
               flex-wrap: wrap;
               //width: 60%;
-              border: 1px solid gray;
+              //border: 1px solid gray;
+              box-shadow: 1px 1px 0 #cedae194;
+              //background: #fdfdfd;
+              background: #cbdbe72e;
               border-radius: 30px;
               position: relative;
               justify-content: center;
@@ -369,6 +373,7 @@
               }
             }
             .langauge {
+              animation: show-effect 1.5s;
               .java {
                 width: 200px;
                 height: 150px;
@@ -385,6 +390,7 @@
               }
             }
             .framework {
+              animation: show-effect 2s;
               width: 35%;
               height: 90%;
               padding: 0 10px;
@@ -420,6 +426,7 @@
               }
             }
             .database {
+              animation: show-effect 2.5s;
               margin: 30px 20px;
               .mysql, .oracle, .maria{
                 //background: #ce4b4b;
@@ -438,6 +445,7 @@
               }
             }
             .etc {
+              animation: show-effect 3s;
               margin-bottom: 0;
               div + div {
                 padding-left: 15px;
@@ -509,6 +517,7 @@
           margin: 20px;
           position: relative;
           .img-wrapper {
+            cursor: pointer;
             background: #fdfdfd;
             border-radius: 20px;
             overflow: hidden;
@@ -521,6 +530,7 @@
             }
           }
           .project-info {
+            cursor: pointer;
             display: none;
             flex-direction: column;
             flex-wrap: wrap;
@@ -575,7 +585,7 @@
           }
           &:hover {
             .project-info {
-              transition: 1s;
+              animation: show-effect .3s;
               display: flex;
             }
           }

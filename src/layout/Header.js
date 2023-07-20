@@ -4,13 +4,20 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FormatBoldIcon from '@mui/icons-material/FormatBold';
 import {Link, NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import styled from "styled-components";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SelectedProject from "../components/selectedProject";
+import UndoIcon from '@mui/icons-material/Undo';
 
 const Header = () => {
+
+    // Redux
     const page = useSelector( (state) => state.page.state)
     const projectType = useSelector( (state) => state.project)
+    const projectDetail = useSelector( (state) => state.detail)
+
+    // Navigate
     const navigate = useNavigate();
+
+    // Ref
     const home = useRef()
     const intro = useRef()
     const skills = useRef()
@@ -46,10 +53,11 @@ const Header = () => {
             document.getElementsByClassName(page)[0].style.color = '#fdfdfd';
             document.getElementsByClassName(projectType)[0].style.color = '#ea8181';
         }
-        activeScroll()
+        if(projectDetail.length === 0) {
+            activeScroll()
+        }
 
-    }, [page, projectType])
-
+    }, [page, projectType, projectDetail])
 
     function delay(ms = 1000) {
         return new Promise((resolve) => setTimeout(resolve, ms));
@@ -57,43 +65,49 @@ const Header = () => {
 
     async function activeScroll() {
         await delay(500);
-        document.getElementsByClassName('app')[0].addEventListener('mousewheel',scrollDownEvent)
+        if(projectDetail.length === 0) {
+            document.getElementsByClassName('index-container')[0]?.addEventListener('mousewheel',scrollDownEvent)
+        }
     }
 
     const scrollDownEvent = (e) => {
         if(e.deltaY >= 0) {
             if(page === 'home'){
                 navigate('/intro')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
             } else if(page === 'intro') {
                 navigate('/skills')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
             } else if(page === 'skills') {
                 navigate('/project/team')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
-            } else if(page === 'project' && projectType === 'team') {
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
+            } else if(page === 'project' && projectType === 'team' && projectDetail.length === 0) {
                 navigate('/project/personal')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
-            } else if(page === 'project' && projectType === 'personal') {
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
+            } else if(page === 'project' && projectType === 'personal' && projectDetail.length === 0) {
                 navigate('/contact')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
+            } else {
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
             }
         } else if(e.deltaY < 0) {
             if(page === 'intro') {
                 navigate('/')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
             } else if(page === 'skills') {
                 navigate('/intro')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
-            } else if(page === 'project' && projectType === 'team') {
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
+            } else if(page === 'project' && projectType === 'team' && projectDetail.length === 0) {
                 navigate('/skills')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
-            } else if(page === 'project' && projectType === 'personal') {
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
+            } else if(page === 'project' && projectType === 'personal' && projectDetail.length === 0) {
                 navigate('/project/team')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
             } else if(page === 'contact') {
                 navigate('/project/personal')
-                document.getElementsByClassName('app')[0].removeEventListener('mousewheel' , scrollDownEvent)
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
+            } else {
+                document.getElementsByClassName('index-container')[0].removeEventListener('mousewheel' , scrollDownEvent)
             }
         }
     }
@@ -109,7 +123,7 @@ const Header = () => {
             <div className="myInfo">
                 <div>
                     <div className="last-update">
-                        <span>last update</span> : 2023.07.11
+                        <span>last update</span> : 2023.07.17
                     </div>
                 </div>
             </div>
@@ -124,6 +138,16 @@ const Header = () => {
                 </div>
                 <Link ref={contact} className='page contact' to="/contact">Contact</Link>
             </div>
+            {projectDetail.length !== 0 ? (
+                <div className="header-selected-project-wrapper">
+                    {projectType === 'team' ? (
+                        <h1 className="project-type" onClick={() => navigate('/project/team')}>Team Project</h1>
+                        ) : (
+                        <h1 className="project-type" onClick={() => navigate('/project/personal')}>Personal Project</h1>
+                        )}
+                    <SelectedProject select={projectDetail} />
+                </div>
+            ) : ''}
         </header>
     );
 };

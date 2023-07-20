@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "../../static/css/detailPageStyle.scss";
 import LaunchIcon from "@mui/icons-material/Launch";
 import {GitHub} from "@mui/icons-material";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import CustomAccordion from "../../components/customAccordion";
+import {useDispatch} from "react-redux";
+import {useLocation} from "react-router-dom";
 
 const DetailProject = () => {
+
+    const dispatch = useDispatch();
+    const location = useLocation();
+
+    const selectedProject = location ? location.state.project : '';
+
+    useEffect(() => {
+        dispatch({type : 'project', select : selectedProject})
+    }, [])
+
+
 
     const playVideo = (event) => {
         event.target.play();
@@ -28,7 +41,7 @@ const DetailProject = () => {
                                 muted={true}
                                 loop={true}
                                 src={process.env.PUBLIC_URL + "/video/jubging.mp4"} />
-                            <img src="" alt="" />
+                            <img src="src/container/pages" alt="" />
                         </div>
                         <div className="project-content">
                             <div className="app-link">

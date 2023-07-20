@@ -29,10 +29,29 @@ function projectReducer(state = 'team' , action) {
     }
     return state
 }
+function detailReducer(state = '' , action) {
+    if(action.select === 'jubging') {
+        state = 'jubging'
+    } else if(action.select === 'damso') {
+        state = 'damso'
+    } else if(action.select === 'jaladin') {
+        state = 'jaladin'
+    } else if(action.select === 'portfolio') {
+        state = 'portfolio'
+    } else if(action.select === 'todo') {
+        state = 'todo'
+    } else if(action.select === 'wooneung') {
+        state = 'wooneung'
+    } else {
+        state = ''
+    }
+    return state
+}
 
 const reducer = combineReducers({
     page : pageReducer,
-    project : projectReducer
+    project : projectReducer,
+    detail : detailReducer,
 })
 
 let store = createStore(reducer)

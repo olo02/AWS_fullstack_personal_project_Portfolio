@@ -10,7 +10,6 @@ const Index = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(document.scrollingElement.scrollTop)
         dispatch({type : 'home'})
     }, [current])
 

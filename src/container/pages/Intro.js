@@ -20,7 +20,7 @@ const Intro = () => {
                 </div>
                 <div className="introduce-text-wrapper">
                     <h2>우물 밖의 개발자, 천은경입니다.</h2>
-                    <h4><ArrowRightIcon /> 풀스택 개발자를 희망하고 있습니다.</h4>
+                    <h4><ArrowRightIcon /> 웹 개발자를 희망하고 있습니다.</h4>
                     <h4><ArrowRightIcon /> 분석하고 몰입하는 것을 좋아합니다.</h4>
                     <h4><ArrowRightIcon /> 우물 안에서 안주하는 제한된 사고를 지양합니다.</h4>
                     <h4><ArrowRightIcon /> 성장의 중요성을 잘 알고있기에,<br /> 앞으로 나아가야 할 방향에 대해 항상 고민하며 실천하고 있습니다.</h4>
