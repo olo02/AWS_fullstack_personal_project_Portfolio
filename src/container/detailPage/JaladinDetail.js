@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react';
+import "../../static/css/detailPageStyle.scss";
 import {useDispatch} from "react-redux";
 import {useLocation} from "react-router-dom";
 import {GitHub} from "@mui/icons-material";
@@ -10,7 +11,25 @@ import BuildIcon from "@mui/icons-material/Build";
 import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import EmailIcon from "@mui/icons-material/Email";
-import {Swiper, SwiperSlide} from "swiper/react";
+import FindInPageIcon from '@mui/icons-material/FindInPage';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+import SaveAsIcon from '@mui/icons-material/SaveAs';
+import SouthIcon from '@mui/icons-material/South';
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
+import PersonIcon from '@mui/icons-material/Person';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+
+import SwiperCore from "swiper";
+import { Autoplay, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+SwiperCore.use([Navigation, Autoplay]) // Swiper
+
 
 const JaladinDetail = () => {
 
@@ -24,7 +43,7 @@ const JaladinDetail = () => {
     const selectedProject = location ? location.state.project : '';
 
     useEffect(() => {
-        dispatch({type : 'project', select : selectedProject})
+        dispatch({type : 'project', nav : 'team', select : selectedProject})
     }, [])
 
     const playVideo = (event) => {
@@ -49,22 +68,22 @@ const JaladinDetail = () => {
         await changeColor(e);
     }
     function changeColor(event) {
-        event.target.style.color = 'rgb(234, 129, 129)';
+        event.target.style.color = '#899ec0';
     }
     function changeDefaultColor() {
-        for(let i = 0; i < 3 ; i++){
+        for(let i = 0; i < 2 ; i++){
             document.getElementById('jaladin-project-service-list-container').children[i].style.color = '#333333de'
         }
     }
     const fixTopBar = (e) => {
         let currentWidth = detailContainer.current.offsetWidth + 'px';
         // console.log(currentWidth)
-        if(e.target.scrollTop >= 1635) {
+        if(e.target.scrollTop >= 1480) {
             changeDefaultColor();
             if (e.target.scrollTop >= bookService.current.offsetTop) {
-                document.getElementById('jaladin-project-service-list-container').children[1].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('jaladin-project-service-list-container').children[1].style.color = '#899ec0';
             } else if(e.target.scrollTop < bookService.current.offsetTop){
-                document.getElementById('jaladin-project-service-list-container').children[0].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('jaladin-project-service-list-container').children[0].style.color = '#899ec0';
             } 
             document.getElementById('jaladin-project-service-list-container').style.position = 'fixed';
             document.getElementById('jaladin-project-service-list-container').style.margin = 0;
@@ -88,7 +107,7 @@ const JaladinDetail = () => {
         <div className="project-detail-wrapper"
              id={'project-detail-wrapper'}
              ref={detailContainer}
-             style={{background:"#f0d9d680"}}
+             style={{background:"#ebf4f5"}}
              onScroll={(e) => fixTopBar(e)}
         >
             <div className="project-detail-container">
@@ -110,9 +129,9 @@ const JaladinDetail = () => {
                         <br />
                         <br />
                         <span>- 구현 목표</span>
-                        <br />객체지향 프로그래밍에 대한 이해
-                        <br />Java를 통한 기본적인 CRUD 기능을 구현
-                        <br />싱글톤 패턴을 사용한 일관된 서비스 제공
+                        <br />(1) 객체지향 프로그래밍에 대한 이해
+                        <br />(2) Java를 통한 기본적인 CRUD 기능을 구현
+                        <br />(3) 싱글톤 패턴을 사용한 일관된 서비스 제공
                     </p>
                     <h3 className="project-info-subject-title"><AssignmentIcon />주제 선정 이유</h3>
                     <div className="project-info-subject">
@@ -139,101 +158,39 @@ const JaladinDetail = () => {
                     </div>
                     <div className="project-service-content" ref={bookDataCrawling}>
                         <h1>도서 데이터 크롤링</h1>
-                        {/*<div className="project-service-content-preview">*/}
-                        {/*    <div><PlayCircleFilledWhiteIcon /></div>*/}
-                        {/*    <video*/}
-                        {/*        onMouseEnter={(e) => playVideo(e)}*/}
-                        {/*        onMouseLeave={(e) => pauseVideo(e)}*/}
-                        {/*        muted={true}*/}
-                        {/*        loop={true}*/}
-                        {/*        src={process.env.PUBLIC_URL + "/video/damso-club-feed.mp4"} />*/}
-                        {/*</div>*/}
-                        <div className="project-service-content-info" style={{paddingTop:0}}>
-                            <h3>기능 소개</h3>
+                        <div className="project-service-content-info" style={{paddingTop:0, display:'flex', flexDirection:'column', alignItems:'center'}}>
+                            <h3 style={{width:'100%'}}>크롤링 과정</h3>
                             <div className="project-service-content-info-container">
-                                <li style={{display:"flex", alignItems:"center"}}><PersonAddIcon /> <span>플로깅 친구(플친)</span>
+                                <li style={{display:"flex", alignItems:"center", paddingBottom:30, width:"100%"}}><FindInPageIcon /> <span> API를 통해 수집한 초기 데이터</span>
                                     <ul>
-                                        <li><span>나의 친구 확인</span>: 나의 플친 리스트를 확인하 수 있습니다.</li>
-                                        <li><span>회원 검색</span>: 아이디를 통해 회원을 검색할 수 있습니다.</li>
-                                        <li><span>플친 요청 관리</span>: 나의 요청과 상대의 요청을 확인하고 관리할 수 있습니다.</li>
-                                        <li><span>플친 신청</span>: 검색 결과 또는 상대의 프로필 페이지에서 플친을 신청할 수 있습니다.</li>
-                                        <li><span>플친 차단</span>: 회원을 차단하여 더 이상의 관계를 막을 수 있습니다.</li>
+                                        <li><span>Kakao Rest API 도서 검색 이용</span></li>
+                                        <li><span>특정 키워드를 입력하여 데이터 크롤링</span></li>
                                     </ul>
                                 </li>
-                                <li style={{display:"flex", alignItems:"center"}}><EmailIcon /> <span>메시지</span>
+                                <img
+                                    style={{width:'90%', paddingBottom:30}}
+                                    alt={''}
+                                    src={require('../../static/img/jaladin-data-before.png')}
+                                />
+                                <SouthIcon style={{width:'100%'}} />
+                                <li style={{display:"flex", alignItems:"center", padding:"30px 0", width:"100%"}}><AnalyticsIcon /> <span> 데이터 파싱</span>
                                     <ul>
-                                        <li><span>메시지 확인</span>: 플친과 나눈 메시지 목록을 확인할 수 있습니다.</li>
-                                        <li><span>메시지 보내기</span>: 나의 플친에게 메시지를 보낼 수 있습니다.</li>
+                                        <li><span>초기 데이터에서 사용할 정보만 추출</span></li>
+                                        <li><span>각 도서를 Book 객체 생성 문자열로 데이터 변환 작업</span></li>
+                                    </ul>
+                                </li>
+                                <img
+                                    style={{width:'90%', paddingBottom:30}}
+                                    alt={''}
+                                    src={require('../../static/img/jaladin-data-after.png')}
+                                />
+                                <SouthIcon style={{width:'100%'}}/>
+                                <li style={{display:"flex", alignItems:"center", padding:"30px 0", width:"100%"}}><SaveAsIcon /> <span> 더미 데이터 활용</span>
+                                    <ul>
+                                        <li><span>BookService에서 도서 더미데이터로 활용</span></li>
                                     </ul>
                                 </li>
                             </div>
-                        </div>
-                        <div className="project-service-content-erd">
-                            <h3>Entity Relationship</h3>
-                            <div style={{display:"flex", flexWrap: "wrap", justifyContent: "space-around"}}>
-                                <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                                    <h4>플친</h4>
-                                    <img style={{width:400}} alt='' src={require('../../static/img/jubging-friend-erd.png')} />
-                                </div>
-                                <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                                    <h4>메시지</h4>
-                                    <img style={{width:400}} alt='' src={require('../../static/img/jubging-message-erd.png')} />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="project-service-content-detail">
-                            <h3>세부 기능</h3>
-                            <Swiper
-                                style={{width:"100%"}}
-                                autoplay={{
-                                    delay: 5000,
-                                }}
-                                slidesPerView={1}
-                                initialSlide={0}
-                                observer={true}
-                                observeParents={true}
-                                spaceBetween={50}
-                                navigation
-                                scrollbar={{ draggable: true }}
-                            >
-                                <SwiperSlide>
-                                    <div className="project-service-content-detail-container">
-                                        <h3>Restful 모임 피드</h3>
-                                        <div className="detail-content-text">
-                                            <li>글/댓글 CRUD 기능, 좋아요 기능 모두 Restful 기반</li>
-                                            <li>글 10개씩 무한 스크롤 로딩</li>
-                                        </div>
-                                        <div className="detail-content">
-                                            <img style={{maxWidth: 650, maxHeight:400}} alt='' src={require('../../static/img/damso-club-main.png')} />
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="project-service-content-detail-container">
-                                        <h3>글 작성하기</h3>
-                                        <div className="detail-content-text">
-                                            <li>일반 피드와 달리 텍스트 기반의 커뮤니티 구성</li>
-                                            <li>CKEditor 적용</li>
-                                            <li>해당 모임원만 글 작성 가능</li>
-                                        </div>
-                                        <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-club-board-create.png')} />
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="project-service-content-detail-container">
-                                        <h3>댓글 작성하기</h3>
-                                        <div className="detail-content-text">
-                                            <li>작성한 댓글은 댓글 목록 최상단에 위치</li>
-                                            <li>더보기 버튼으로 댓글 페이지네이션</li>
-                                        </div>
-                                        <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-club-board-view.png')} />
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            </Swiper>
                         </div>
                     </div>
                     <div className="project-service-content" ref={bookService}>
@@ -250,16 +207,21 @@ const JaladinDetail = () => {
                         <div className="project-service-content-info" style={{paddingTop:0}}>
                             <h3>기능 소개</h3>
                             <div className="project-service-content-info-container"
-                                 style={{padding: "20px 50px"}}>
-                                <li><span>카테고리별 커뮤니티</span>: 플로깅글 / 일상글 카테고리로 게시글 목록을 확인할 수 있습니다.</li>
-                                <li><span>첨부파일 글 작성</span>: 첨부파일이 포함된 글을 작성하고 관리할 수 있습니다.</li>
-                                <li><span>댓글</span>: Restful 댓글을 관리하고 회원들과 소통할 수 있습니다.</li>
-                                <li><span>페이지네이션</span>: 게시글과 댓글을 모두 페이지네이션을 적용하였습니다.</li>
+                                 style={{padding: "40px 50px 20px"}}>
+                                <li><span>도서 검색</span>: isbn코드로 원하는 도서를 검색할 수 있습니다.</li>
+                                <li><span>페이지네이션</span>: 결과 확인 편의에 따라 도서 검색 결과는 8개씩, 관리자 도서 목록은 10개씩 페이지네이션</li>
+                                <li style={{display:"flex", alignItems:"center"}}><MapsHomeWorkIcon /><span>출판사</span>
+                                    <ul>
+                                        <li><span>도서 등록</span>: 도서 등록을 신청하고 관리할 수 있습니다.</li>
+                                    </ul>
+                                </li>
+                                <li style={{display:"flex", alignItems:"center"}}><AdminPanelSettingsIcon /><span>관리자</span>
+                                    <ul>
+                                        <li><span>신청 도서 관리</span>: 출판사가 신청한 도서를 관리할 수 있습니다.</li>
+                                        <li><span>추천도서 관리</span>: isbn코드로 추천도서를 설정할 수 있습니다.</li>
+                                    </ul>
+                                </li>
                             </div>
-                        </div>
-                        <div className="project-service-content-erd">
-                            <h3>Entity Relationship</h3>
-                            <img alt='' src={require('../../static/img/jubging-message-erd.png')} />
                         </div>
                         <div className="project-service-content-detail">
                             <h3>세부 기능</h3>
@@ -278,51 +240,64 @@ const JaladinDetail = () => {
                             >
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>채팅방 목록</h3>
+                                        <h3>도서 검색</h3>
                                         <div className="detail-content-text">
-                                            <li>채팅 상대의 정보와 가장 최근 메시지의 내용 확인 가능</li>
-                                            <li>웹소켓 통신으로 채팅방 목록 실시간 업데이트</li>
+                                            <li>책 제목, 작가, isbn 코드를 통해 검색</li>
+                                            <li>제목 검색 시, 검색 키워드를 포함한 도서 결과 모두 출력</li>
+                                            <li>검색 키워드의 공백 무시 처리</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-chat-small.png')} />
+                                            <img alt='' src={require('../../static/img/jaladin-search.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>채팅방 만들기</h3>
+                                        <h3>페이지네이션</h3>
                                         <div className="detail-content-text">
-                                            <li>채팅방 또는 채팅 상대 클릭 시 채팅방 생성</li>
-                                            <li>상대와 이미 나눈 메시지가 존재하는 경우, 기존 채팅방으로 연결</li>
+                                            <li>결과 확인 편의성에 따라 검색 페이징과 관리자의 페이징 상이한 형태</li>
+                                            <li>엔터 시, 다음 페이지로 이동</li>
+                                            <li>더 이상 다음페이지 없을 경우 '마지막 페이지' 출력</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-chat-create.png')} />
+                                            <img alt='' src={require('../../static/img/jaladin-search-paging.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>채팅 하기</h3>
+                                        <h3>출판사<br />- 도서 등록</h3>
                                         <div className="detail-content-text">
-                                            <li>웹소켓 통신과 Rest API 함께 적용</li>
-                                            <li>웹소켓 통신이 다른 회원에게는 적용되지 않도록 조건문 설정</li>
-                                            <li>가장 최근 메시지가 최하단에 위치</li>
+                                            <li>isbn 코드로 해당 출판사의 도서 상품 신청</li>
+                                            <li>isbn 코드 중복 검사</li>
+                                            <li>isbn 코드로 해당 출판사의 도서 상품 수정</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-chat-room.png')} />
+                                            <img alt='' src={require('../../static/img/jaladin-publisher-request.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>읽음 / 안 읽음 표시</h3>
+                                        <h3>관리자<br />- 신청 도서 관리</h3>
                                         <div className="detail-content-text">
-                                            <li>미확인 메시지가 존재하는 채팅방 '●' 아이콘 표시</li>
-                                            <li>미확인 메시지 '1' 아이콘 표시</li>
+                                            <li>출판사가 신청한 상품 목록 확인</li>
+                                            <li>10개씩 페이지네이션</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-chat-list.png')} />
-                                            <img alt='' src={require('../../static/img/damso-chat-read-icon.png')} />
+                                            <img alt='' src={require('../../static/img/jaladin-admin-request.png')} />
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="project-service-content-detail-container">
+                                        <h3>관리자<br />- 추천도서 관리</h3>
+                                        <div className="detail-content-text">
+                                            <li>추천도서 선정 및 해제</li>
+                                            <li>토글 기능으로 구현</li>
+                                        </div>
+                                        <div className="detail-content">
+                                            <img alt='' src={require('../../static/img/jaladin-admin-pick.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>

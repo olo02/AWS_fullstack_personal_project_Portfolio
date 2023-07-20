@@ -37,7 +37,7 @@
     float: right;
     overflow-y: auto;
     min-height: 100vh;
-    background: #efdfdd;
+    background: #ebf4f5;
     box-shadow: -1px -1px 3px #d3d1d182;
     .project-detail-container {
       h3, h4{
@@ -164,7 +164,7 @@
             font-weight: bold;
             font-size: 18px;
             &:hover {
-              color: rgb(234, 129, 129);
+              color: #899ec0;
             }
           }
           //li + li {
@@ -175,7 +175,7 @@
           background: #fdfdfd;
           padding: 80px 70px;
           h1 {
-            background: #ea8181d9;
+            background: rgb(137, 158, 192);
             width: max-content;
             padding: 5px 20px;
             border-radius: 10px;
@@ -189,6 +189,7 @@
             overflow: hidden;
             border-radius: 20px;
             position: relative;
+            box-shadow: 1px 1px 4px #dad8d8a3;
             svg {
               position: absolute;
               width: 80px;
@@ -210,9 +211,10 @@
             padding: 50px 0;
             .project-service-content-info-container {
               width: max-content;
+              max-width: 90%;
               padding: 30px 50px 20px;
               border-radius: 20px;
-              background: rgba(240, 217, 214, 0.5);
+              background: #ebf4f5;
               li {
                 span {
                   font-weight: bold;
@@ -233,7 +235,7 @@
             padding: 50px 0;
             .project-service-content-detail-container {
               height: 450px;
-              background: rgba(240, 217, 214, 0.5);
+              background: #ebf4f5;
               padding: 50px;
               border-radius: 20px;
               display: flex;

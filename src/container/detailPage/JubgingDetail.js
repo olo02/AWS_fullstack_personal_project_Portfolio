@@ -35,7 +35,6 @@ const JubgingDetail = () => {
     const dispatch = useDispatch();
     const location = useLocation();
 
-    const snsService = useRef(null);
     const friendService = useRef(null);
     const communityService = useRef(null);
     const adminService = useRef(null);
@@ -44,7 +43,7 @@ const JubgingDetail = () => {
     const selectedProject = location ? location.state.project : '';
 
     useEffect(() => {
-        dispatch({type : 'project', select : selectedProject})
+        dispatch({type : 'project', nav : 'team', select : selectedProject})
     }, [])
 
     const playVideo = (event) => {
@@ -69,7 +68,7 @@ const JubgingDetail = () => {
         await changeColor(e);
     }
     function changeColor(event) {
-        event.target.style.color = 'rgb(234, 129, 129)';
+        event.target.style.color = '#899ec0';
     }
     function changeDefaultColor() {
         for(let i = 0; i < 3 ; i++){
@@ -82,11 +81,11 @@ const JubgingDetail = () => {
         if(e.target.scrollTop >= 1635) {
             changeDefaultColor();
             if (e.target.scrollTop >= adminService.current.offsetTop) {
-                document.getElementById('damso-project-service-list-container').children[2].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('damso-project-service-list-container').children[2].style.color = '#899ec0';
             } else if(e.target.scrollTop < communityService.current.offsetTop){
-                document.getElementById('damso-project-service-list-container').children[0].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('damso-project-service-list-container').children[0].style.color = '#899ec0';
             } else if(e.target.scrollTop < adminService.current.offsetTop) {
-                document.getElementById('damso-project-service-list-container').children[1].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('damso-project-service-list-container').children[1].style.color = '#899ec0';
             }
             document.getElementById('damso-project-service-list-container').style.position = 'fixed';
             document.getElementById('damso-project-service-list-container').style.margin = 0;
@@ -110,7 +109,7 @@ const JubgingDetail = () => {
         <div className="project-detail-wrapper"
              id={'project-detail-wrapper'}
              ref={detailContainer}
-             style={{background:"#f0d9d680"}}
+             style={{background:"#ebf4f5"}}
              onScroll={(e) => fixTopBar(e)}
         >
             <div className="project-detail-container">
@@ -182,25 +181,22 @@ const JubgingDetail = () => {
                     </div>
                     <div className="project-service-content" ref={friendService}>
                         <h1>플친 / SNS 기능</h1>
-                        {/*<div className="project-service-content-preview">*/}
-                        {/*    <div><PlayCircleFilledWhiteIcon /></div>*/}
-                        {/*    <video*/}
-                        {/*        onMouseEnter={(e) => playVideo(e)}*/}
-                        {/*        onMouseLeave={(e) => pauseVideo(e)}*/}
-                        {/*        muted={true}*/}
-                        {/*        loop={true}*/}
-                        {/*        src={process.env.PUBLIC_URL + "/video/damso-club-feed.mp4"} />*/}
-                        {/*</div>*/}
+                        <div className="project-service-content-preview" style={{margin:"20px 0 40px"}}>
+                            <img
+                                style={{width:'100%', borderRadius:30}}
+                                alt={''}
+                                src={require('../../static/img/jubging-friend-main.png')} />
+                        </div>
                         <div className="project-service-content-info" style={{paddingTop:0}}>
                             <h3>기능 소개</h3>
                             <div className="project-service-content-info-container">
                                 <li style={{display:"flex", alignItems:"center"}}><PersonAddIcon /> <span>플로깅 친구(플친)</span>
                                     <ul>
+                                        <li><span>Restful</span>: 모든 플친 서비스는 Restful 서비스로 구축되어 있습니다.</li>
                                         <li><span>나의 친구 확인</span>: 나의 플친 리스트를 확인하 수 있습니다.</li>
                                         <li><span>회원 검색</span>: 아이디를 통해 회원을 검색할 수 있습니다.</li>
                                         <li><span>플친 요청 관리</span>: 나의 요청과 상대의 요청을 확인하고 관리할 수 있습니다.</li>
-                                        <li><span>플친 신청</span>: 검색 결과 또는 상대의 프로필 페이지에서 플친을 신청할 수 있습니다.</li>
-                                        <li><span>플친 차단</span>: 회원을 차단하여 더 이상의 관계를 막을 수 있습니다.</li>
+                                        <li><span>플친 신청 / 차단</span>: 검색 결과 또는 상대의 프로필 페이지에서 플친을 신청하고 차단할 수 있습니다.</li>
                                     </ul>
                                 </li>
                                 <li style={{display:"flex", alignItems:"center"}}><EmailIcon /> <span>메시지</span>
@@ -241,55 +237,81 @@ const JubgingDetail = () => {
                             >
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>Restful 모임 피드</h3>
+                                        <h3>나의 친구 확인</h3>
                                         <div className="detail-content-text">
-                                            <li>글/댓글 CRUD 기능, 좋아요 기능 모두 Restful 기반</li>
-                                            <li>글 10개씩 무한 스크롤 로딩</li>
+                                            <li>나와 플친인 회원의 목록을 확인할 수 있습니다.</li>
+                                            <li>플친과는 메시지를 주고받을 수 있습니다.</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img style={{maxWidth: 650, maxHeight:400}} alt='' src={require('../../static/img/damso-club-main.png')} />
+                                            <img style={{maxWidth: 650, maxHeight:400}} alt='' src={require('../../static/img/jubging-friend-my.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>글 작성하기</h3>
+                                        <h3>회원 검색</h3>
                                         <div className="detail-content-text">
-                                            <li>일반 피드와 달리 텍스트 기반의 커뮤니티 구성</li>
-                                            <li>CKEditor 적용</li>
-                                            <li>해당 모임원만 글 작성 가능</li>
+                                            <li>회원 아이디를 통해 원하는 회원을 찾을 수 있습니다.</li>
+                                            <li>검색 결과의 페이지네이션은 반응형 디자인에 따라 번호 또는 더보기 형태로 구성하였습니다.</li>
+                                            <li>웹의 형태는 Spring JPA을 통해 Page 객체를 활용하였습니다.</li>
+                                            <li>모바일의 형태는 Page 객체 내 Slice 객체 특성을 활용하였습니다.</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-club-board-create.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-search-web.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-search-mobile.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                 <div className="project-service-content-detail-container">
-                                    <h3>댓글 작성하기</h3>
+                                    <h3>플친 요청 관리</h3>
                                     <div className="detail-content-text">
-                                        <li>작성한 댓글은 댓글 목록 최상단에 위치</li>
-                                        <li>더보기 버튼으로 댓글 페이지네이션</li>
+                                        <li>내가 신청한 플친 목록과 내가 받은 플친 목록을 관리할 수 있습니다.</li>
                                     </div>
                                     <div className="detail-content">
-                                        <img alt='' src={require('../../static/img/damso-club-board-view.png')} />
+                                        <img alt='' src={require('../../static/img/jubging-friend-myresponse.png')} />
+                                        <img alt='' src={require('../../static/img/jubging-friend-myrequest.png')} />
                                     </div>
                                 </div>
-                            </SwiperSlide>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="project-service-content-detail-container">
+                                        <h3>플친 신청 / 차단</h3>
+                                        <div className="detail-content-text">
+                                            <li>상대의 프로필, 또는 회원 검색을 통해 플친을 신청할 수 있습니다.</li>
+                                            <li>상대를 차단하여 더 이상의 접근을 막을 수 있습니다.</li>
+                                            <li>차단 당한 상대는 회원에게 플친을 신청할 수 없습니다.</li>
+                                        </div>
+                                        <div className="detail-content">
+                                            <img alt='' src={require('../../static/img/jubging-friend-profile.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-friend-request.png')} />
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="project-service-content-detail-container">
+                                        <h3>메시지</h3>
+                                        <div className="detail-content-text">
+                                            <li>메시지 확인 : 플친과 나눈 메시지 목록을 확인할 수 있습니다.</li>
+                                            <li>메시지 보내기 : 나의 플친에게 메시지를 보낼 수 있습니다.</li>
+                                        </div>
+                                        <div className="detail-content">
+                                            <img alt='' src={require('../../static/img/jubging-message-list.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-message-send.png')} />
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
                             </Swiper>
                         </div>
                     </div>
                     <div className="project-service-content" ref={communityService}>
                         <h1>커뮤니티 기능</h1>
-                        {/*<div className="project-service-content-preview" >*/}
-                        {/*    <div><PlayCircleFilledWhiteIcon /></div>*/}
-                        {/*    <video*/}
-                        {/*        onMouseEnter={(e) => playVideo(e)}*/}
-                        {/*        onMouseLeave={(e) => pauseVideo(e)}*/}
-                        {/*        muted={true}*/}
-                        {/*        loop={true}*/}
-                        {/*        src={process.env.PUBLIC_URL + "/video/damso-chat-create.mp4"} />*/}
-                        {/*</div>*/}
+                        <div className="project-service-content-preview" style={{margin:"20px 0 40px"}}>
+                            <img
+                                style={{width:'100%', borderRadius:30}}
+                                alt={''}
+                                src={require('../../static/img/jubging-friend-main.png')} />
+                        </div>
                         <div className="project-service-content-info" style={{paddingTop:0}}>
                             <h3>기능 소개</h3>
                             <div className="project-service-content-info-container"
@@ -321,51 +343,53 @@ const JubgingDetail = () => {
                             >
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>채팅방 목록</h3>
+                                        <h3>카테고리별 커뮤니티</h3>
                                         <div className="detail-content-text">
-                                            <li>채팅 상대의 정보와 가장 최근 메시지의 내용 확인 가능</li>
-                                            <li>웹소켓 통신으로 채팅방 목록 실시간 업데이트</li>
+                                            <li>플로깅과 함께 작성한 플로깅 글과, 일상적으로 작성하는 글로 카테고리를 구분합니다.</li>
+                                            <li>전체글/플로깅글/일상글로 커뮤니티 글 목록을 확인할 수 있습니다.</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-chat-small.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-community-list.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>채팅방 만들기</h3>
+                                        <h3>첨부파일 글 작성</h3>
                                         <div className="detail-content-text">
-                                            <li>채팅방 또는 채팅 상대 클릭 시 채팅방 생성</li>
-                                            <li>상대와 이미 나눈 메시지가 존재하는 경우, 기존 채팅방으로 연결</li>
+                                            <li>로그인 시에만 글을 남길 수 있습니다.</li>
+                                            <li>첨부파일과 글 제목이 필수적으로 요구됩니다.</li>
+                                            <li>파일 사이즈는 5MB로 제한됩니다.</li>
+                                            <li>플로깅 후 연결되는 인증샷 글은 플로깅글로 자동 등록됩니다.</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-chat-create.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-community-post.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>채팅 하기</h3>
+                                        <h3>댓글</h3>
                                         <div className="detail-content-text">
-                                            <li>웹소켓 통신과 Rest API 함께 적용</li>
-                                            <li>웹소켓 통신이 다른 회원에게는 적용되지 않도록 조건문 설정</li>
-                                            <li>가장 최근 메시지가 최하단에 위치</li>
+                                            <li>회원은 커뮤니티의 글 상세페이지에서 댓글을 자유롭게 남길 수 있습니다.</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-chat-room.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-community-detail.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>읽음 / 안 읽음 표시</h3>
+                                        <h3>페이지네이션</h3>
                                         <div className="detail-content-text">
-                                            <li>미확인 메시지가 존재하는 채팅방 '●' 아이콘 표시</li>
-                                            <li>미확인 메시지 '1' 아이콘 표시</li>
+                                            <li>검색 결과의 페이지네이션은 반응형 디자인에 따라 번호 또는 더보기 형태로 구성하였습니다.</li>
+                                            <li>웹의 형태는 Spring JPA을 통해 Page 객체를 활용하였습니다.</li>
+                                            <li>모바일의 형태는 Page 객체 내 Slice 객체 특성을 활용하였습니다.</li>
+                                            <li>이러한 페이지네이션을 컴포넌트로 분리하여 모든 페이징에 재사용하였습니다.</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-chat-list.png')} />
-                                            <img alt='' src={require('../../static/img/damso-chat-read-icon.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-community-page.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-community-page-mobile.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -380,7 +404,6 @@ const JubgingDetail = () => {
                             <div className="project-service-content-info-container" style={{paddingTop: "20px"}}>
                                 <li><span>Security</span>: 관리자의 권한 유무에 따라 관리자 페이지의 접근이 활성화됩니다.</li>
                                 <li><span>모든 정보 확인</span>: 관리자는 모든 회원의 모든 정보를 확인할 수 있습니다.</li>
-                                <li><span>탭 이동</span>: 탭 선택을 통해 필요한 정보의 위치로 스크롤 이동할 수 있습니다.</li>
                             </div>
                         </div>
                         <div className="project-service-content-erd">
@@ -404,15 +427,27 @@ const JubgingDetail = () => {
                             >
                                 <SwiperSlide>
                                     <div className="project-service-content-detail-container">
-                                        <h3>프로필 사진</h3>
+                                        <h3>Security</h3>
                                         <div className="detail-content-text">
-                                            <li>모든 회원은 프로필 사진을 설정하거나 삭제 가능</li>
-                                            <li>프로필 사진이 미설정된 경우 기본 이미지로 대체</li>
-                                            <li>게시글과 댓글 등에서 프로필 사진 함께 조회 가능</li>
+                                            <li>Backend의 WebSecurityConfig에서 관리자에게만 admin 서비스를 제공하도록 설정하였습니다.</li>
+                                            <li>Frontend에서는 권한을 쿠키에 저장하여 관리자에게만 url 접근을 허용하였습니다.</li>
+                                            <li>또한 관리자에게만 상단 관리자 탭을 활성화하였습니다.</li>
                                         </div>
                                         <div className="detail-content">
-                                            <img alt='' src={require('../../static/img/damso-profile-edit.png')} />
-                                            <img alt='' src={require('../../static/img/damso-profile-read.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-admin-security.png')} />
+                                            <img alt='' src={require('../../static/img/jubging-admin-topbar.png')} />
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="project-service-content-detail-container">
+                                        <h3>모든 정보 확인</h3>
+                                        <div className="detail-content-text">
+                                            <li>관리자는 모든 회원의 모든 정보를 확인할 수 있습니다.</li>
+                                            <li>탭 선택을 통해 필요한 정보의 위치로 스크롤 이동할 수 있습니다.</li>
+                                        </div>
+                                        <div className="detail-content">
+                                            <img alt='' src={require('../../static/img/jubging-admin.png')} />
                                         </div>
                                     </div>
                                 </SwiperSlide>

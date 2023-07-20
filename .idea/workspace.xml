@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5bc9493a-c987-44f3-be3d-dc8b9b2e653f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/video/damso-board-create.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/video/damso-chat-create.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/video/damso-club-create.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/video/damso-club-feed.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/selectedProject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/detailPage/DamsoDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/detailPage/JaladinDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/detailPage/JubgingDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/detailPage/PortfolioDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/detailPage/TodoDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/detailPage/WooneungDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/detailPages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/css/detailStyle.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-chat-create.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-chat-list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-chat-read-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-chat-room.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-chat-small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-board-create.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-board-view.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-create-btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-create.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-erd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-feed-erd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-info-default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-info-member.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-join.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-join2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-my.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-private.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-search-small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-tab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-update.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-club-update2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-message-erd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-mypage-update.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-profile-edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-profile-erd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/damso-profile-read.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/jubging-admin-erd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/jubging-community-erd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/jubging-friend-erd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/jubging-img1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/jubging-message-erd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/img/loading.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/projectlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/projectlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/pages/DetailProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/detailPage/JubgingDetail-copy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/pages/Intro.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/pages/Intro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/pages/projectPersonal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/pages/projectPersonal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/pages/projectTeam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/pages/projectTeam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/pages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/pages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/detailPageStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/detailPageStyle.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/headerStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/headerStyle.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/indexStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/indexStyle.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1eea3cf8-27a1-4ca0-ad69-357eca5e657c" />
+        <option name="url" value="https://github.com/olo02/AWS_fullstack_personal_project_Portfolio.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2S9lNXs7Ksm5N9eJhwEb85rm93N" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ssi/Downloads/2/2/hexadash-react/documentation/portfolio_eungyeong/src/static/img&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ssi\Downloads\2\2\hexadash-react\documentation\portfolio_eungyeong\src\static\img" />
+      <recent name="C:\Users\ssi\Downloads\2\2\hexadash-react\documentation\portfolio_eungyeong\src\container\detailPage" />
+      <recent name="C:\Users\ssi\Downloads\2\2\hexadash-react\documentation\portfolio_eungyeong\src\static\css" />
+      <recent name="C:\Users\ssi\Downloads\themeforest-cKzgnech-hexadash-svelte-multipurpose-admin-dashboard-template_2\themeforest-cKzgnech-hexadash-svelte-multipurpose-admin-dashboard-template\hexadash-react\documentation\portfolio_eungyeong\src\static\img" />
+      <recent name="C:\Users\ssi\Downloads\themeforest-cKzgnech-hexadash-svelte-multipurpose-admin-dashboard-template_2\themeforest-cKzgnech-hexadash-svelte-multipurpose-admin-dashboard-template\hexadash-react\documentation\portfolio_eungyeong\public\video" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ssi\Downloads\2\2\hexadash-react\documentation\portfolio_eungyeong\src\static\img" />
+      <recent name="C:\Users\ssi\Downloads\2\2\hexadash-react\documentation\portfolio_eungyeong\public\video" />
+      <recent name="C:\Users\ssi\Downloads\2\2\hexadash-react\documentation\portfolio_eungyeong\src\container\detailPage" />
+      <recent name="C:\Users\ssi\Downloads\themeforest-cKzgnech-hexadash-svelte-multipurpose-admin-dashboard-template_2\themeforest-cKzgnech-hexadash-svelte-multipurpose-admin-dashboard-template\hexadash-react\documentation\portfolio_eungyeong\public" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\ssi\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5bc9493a-c987-44f3-be3d-dc8b9b2e653f" name="Changes" comment="" />
+      <created>1688566637819</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688566637819</updated>
+      <workItem from="1688566639017" duration="4227000" />
+      <workItem from="1688622925486" duration="5407000" />
+      <workItem from="1688704221703" duration="12955000" />
+      <workItem from="1688807078682" duration="44216000" />
+      <workItem from="1688915869506" duration="34027000" />
+      <workItem from="1688967795795" duration="5760000" />
+      <workItem from="1688976482190" duration="2068000" />
+      <workItem from="1688988276374" duration="38741000" />
+      <workItem from="1689063369830" duration="30640000" />
+      <workItem from="1689266615655" duration="908000" />
+      <workItem from="1689315492838" duration="921000" />
+      <workItem from="1689429569805" duration="18000" />
+      <workItem from="1689587115662" duration="59661000" />
+      <workItem from="1689797152806" duration="5346000" />
+      <workItem from="1689831059765" duration="19232000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/container/pages/index.js</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

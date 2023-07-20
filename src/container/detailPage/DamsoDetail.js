@@ -41,7 +41,7 @@ const DamsoDetail = () => {
     const selectedProject = location ? location.state.project : '';
 
     useEffect(() => {
-        dispatch({type : 'project', select : selectedProject})
+        dispatch({type : 'project', nav : 'team', select : selectedProject})
     }, [])
 
     const playVideo = (event) => {
@@ -66,7 +66,7 @@ const DamsoDetail = () => {
         await changeColor(e);
     }
     function changeColor(event) {
-        event.target.style.color = 'rgb(234, 129, 129)';
+        event.target.style.color = '#899ec0';
     }
     function changeDefaultColor() {
         for(let i = 0; i < 4 ; i++){
@@ -79,13 +79,13 @@ const DamsoDetail = () => {
         if(e.target.scrollTop >= 1635) {
             changeDefaultColor();
             if (e.target.scrollTop >= profileService.current.offsetTop) {
-                document.getElementById('project-service-list-container').children[3].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('project-service-list-container').children[3].style.color = '#899ec0';
             } else if(e.target.scrollTop < clubFeedService.current.offsetTop){
-                document.getElementById('project-service-list-container').children[0].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('project-service-list-container').children[0].style.color = '#899ec0';
             } else if(e.target.scrollTop < chatService.current.offsetTop){
-                document.getElementById('project-service-list-container').children[1].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('project-service-list-container').children[1].style.color = '#899ec0';
             } else if(e.target.scrollTop < profileService.current.offsetTop) {
-                document.getElementById('project-service-list-container').children[2].style.color = 'rgb(234, 129, 129)';
+                document.getElementById('project-service-list-container').children[2].style.color = '#899ec0';
             }
             document.getElementById('project-service-list-container').style.position = 'fixed';
             document.getElementById('project-service-list-container').style.margin = 0;
@@ -109,7 +109,7 @@ const DamsoDetail = () => {
         <div className="project-detail-wrapper"
              id={'project-detail-wrapper'}
              ref={detailContainer}
-             style={{background:"#f0d9d680"}}
+             style={{background:"#ebf4f5"}}
              onScroll={(e) => fixTopBar(e)}
         >
             <div className="project-detail-container">
